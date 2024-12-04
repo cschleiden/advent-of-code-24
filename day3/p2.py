@@ -6,7 +6,7 @@ with open('day3/input.txt', 'r') as file:
     lines = file.readlines()
     for line in lines:
         for i in range(len(line)):
-            if ''.join(line[i:i+4]) == 'mul(':
+            if line[i:i+4] == 'mul(':
                 i += 4
                 n1 = []
                 while line[i].isdigit():
@@ -26,10 +26,10 @@ with open('day3/input.txt', 'r') as file:
                     continue
                 if do:
                     ops.append([n1, n2])
-            elif ''.join(line[i:i+4]) == 'do()':
+            elif line[i:i+4] == 'do()':
                 i += 4
                 do = True
-            elif ''.join(line[i:i+7]) == "don't()":
+            elif line[i:i+7] == "don't()":
                 i += 7
                 do = False
             else:
